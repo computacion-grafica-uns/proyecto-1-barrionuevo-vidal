@@ -17,7 +17,7 @@ public class CameraControl : MonoBehaviour
         miCamara.name = "Camara";
         miCamara.AddComponent<Camera>();
 
-        miCamara.transform.position = new Vector3(3,0.5f,1.5f);
+        miCamara.transform.position = new Vector3(9,2,5);
         miCamara.transform.rotation = Quaternion.Euler(0,-90,0);
 
         miCamara.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;

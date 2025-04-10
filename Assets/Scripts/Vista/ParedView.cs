@@ -9,6 +9,8 @@ public class ParedView : MonoBehaviour
     private GameObject paredDerecha;
     private GameObject paredFrontal;
     private GameObject paredTrasera;
+    private GameObject techo;
+    private GameObject piso;
     
     void Start()
     {
@@ -18,6 +20,8 @@ public class ParedView : MonoBehaviour
         paredDerecha = generator.CreateRightWall();
         paredFrontal = generator.CreateFrontWall();
         paredTrasera = generator.CreateBackWall();
+        techo = generator.CreateRoof();
+        piso = generator.CreateFloor();
     }
 
     // Update is called once per frame
