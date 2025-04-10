@@ -4,68 +4,27 @@ using UnityEngine;
 
 public class WallsGenerator 
 {
-    private ModelMatrixCreator modelMatrix;
     private ModelCreator wallModel;
     
     public WallsGenerator(){}
-    public GameObject CreateLeftWall()
-    {
-        GameObject paredIzquierda = new GameObject();
-        AddMeshAndMaterial(paredIzquierda);
-        paredIzquierda.name = "Pared_Izquierda";
-        modelMatrix = new ModelMatrixCreator(new Vector3(0,0,0),new Vector3(0,Mathf.Deg2Rad * 90,Mathf.Deg2Rad * 90),new Vector3(5,10,10));
-        paredIzquierda.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
-        return paredIzquierda;
-    }
 
-    public GameObject CreateRightWall()
-    {
-        GameObject paredDerecha = new GameObject();
-        AddMeshAndMaterial(paredDerecha);
-        paredDerecha.name = "Pared_Derecha";
-        modelMatrix = new ModelMatrixCreator(new Vector3(10,0,0),new Vector3(0,Mathf.Deg2Rad * 90,Mathf.Deg2Rad * 90),new Vector3(5,10,10));
-        paredDerecha.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
-        return paredDerecha;
-    }
+    public GameObject CreateLeftWall() => CreateWall("Pared_Izquierda", new Vector3(0, 0, 0), new Vector3(0, Mathf.Deg2Rad*90, Mathf.Deg2Rad*90), new Vector3(5, 10, 10));
+    public GameObject CreateRightWall() => CreateWall("Pared_Derecha", new Vector3(10, 0, 0), new Vector3(0, Mathf.Deg2Rad*90, Mathf.Deg2Rad*90), new Vector3(5, 10, 10));
+    public GameObject CreateFrontWall() => CreateWall("Pared_Frontal", new Vector3(10, 0, 0), new Vector3(0, 0, Mathf.Deg2Rad*90), new Vector3(5, 10, 10));
+    public GameObject CreateBackWall() => CreateWall("Pared_Trasera", new Vector3(10, 0, 10), new Vector3(0, 0, Mathf.Deg2Rad*90), new Vector3(5, 10, 10));
+    public GameObject CreateRoof() => CreateWall("Techo", new Vector3(0, 5, 10), new Vector3(Mathf.Deg2Rad*90, 0, 0), new Vector3(10, 10, 10));
+    public GameObject CreateFloor() => CreateWall("Piso", new Vector3(0, 0, 10), new Vector3(Mathf.Deg2Rad*90, 0, 0), new Vector3(10, 10, 10));
 
-    public GameObject CreateFrontWall()
+    private GameObject CreateWall(string name, Vector3 position, Vector3 rotation, Vector3 scale)
     {
-        GameObject paredFrontal = new GameObject();
-        AddMeshAndMaterial(paredFrontal);
-        paredFrontal.name = "Pared_Frontal";
-        modelMatrix = new ModelMatrixCreator(new Vector3(10,0,0),new Vector3(0,0,Mathf.Deg2Rad * 90),new Vector3(5,10,10));
-        paredFrontal.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
-        return paredFrontal;
-    }
+        GameObject obj = new GameObject(name);
+        AddMeshAndMaterial(obj);
 
-    public GameObject CreateBackWall()
-    {
-        GameObject paredTrasera = new GameObject();
-        AddMeshAndMaterial(paredTrasera);
-        paredTrasera.name = "Pared_Trasera";
-        modelMatrix = new ModelMatrixCreator(new Vector3(10,0,10),new Vector3(0,0,Mathf.Deg2Rad * 90),new Vector3(5,10,10));
-        paredTrasera.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
-        return paredTrasera;
-    }
+        ModelMatrixCreator modelMatrix = new ModelMatrixCreator(position, rotation, scale);
 
-    public GameObject CreateRoof()
-    {
-        GameObject techo = new GameObject();
-        AddMeshAndMaterial(techo);
-        techo.name = "Techo";
-        modelMatrix = new ModelMatrixCreator(new Vector3(0,5,10),new Vector3(Mathf.Deg2Rad * 90,0,0),new Vector3(10,10,10));
-        techo.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
-        return techo;
-    }
+        obj.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix", modelMatrix.GetMatrix4x4());
 
-    public GameObject CreateFloor()
-    {
-        GameObject piso = new GameObject();
-        AddMeshAndMaterial(piso);
-        piso.name = "Piso";
-        modelMatrix = new ModelMatrixCreator(new Vector3(0,0,10),new Vector3(Mathf.Deg2Rad * 90,0,0),new Vector3(10,10,10));
-        piso.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
-        return piso;
+        return obj;
     }
 
     private void AddMeshAndMaterial(GameObject obj)
