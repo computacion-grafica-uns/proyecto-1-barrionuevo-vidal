@@ -15,6 +15,9 @@ public class ParedView : MonoBehaviour
         generator = new WallsGenerator();
         
         paredIzquierda = generator.CreateLeftWall();
+        paredDerecha = generator.CreateRightWall();
+        paredFrontal = generator.CreateFrontWall();
+        paredTrasera = generator.CreateBackWall();
     }
 
     // Update is called once per frame

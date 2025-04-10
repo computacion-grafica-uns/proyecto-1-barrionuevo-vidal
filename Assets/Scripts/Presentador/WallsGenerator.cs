@@ -5,10 +5,8 @@ using UnityEngine.Video;
 
 public class WallsGenerator 
 {
-    private Vector3[] vertices;
-    private int[] triangles;
-    private Color[] colores;
     private ModelMatrixCreator modelMatrix;
+    private ModelCreator wallModel;
     
     public WallsGenerator(){}
     public GameObject CreateLeftWall()
@@ -16,9 +14,39 @@ public class WallsGenerator
         GameObject paredIzquierda = new GameObject();
         AddMeshAndMaterial(paredIzquierda);
         paredIzquierda.name = "Pared_Izquierda";
-        modelMatrix = new ModelMatrixCreator(new Vector3(0,0,0),new Vector3(0,Mathf.Deg2Rad * 90,Mathf.Deg2Rad * 90),new Vector3(1,3,8));
+        modelMatrix = new ModelMatrixCreator(new Vector3(0,0,0),new Vector3(0,Mathf.Deg2Rad * 90,Mathf.Deg2Rad * 90),new Vector3(3,8,8));
         paredIzquierda.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
         return paredIzquierda;
+    }
+
+    public GameObject CreateRightWall()
+    {
+        GameObject paredDerecha = new GameObject();
+        AddMeshAndMaterial(paredDerecha);
+        paredDerecha.name = "Pared_Derecha";
+        modelMatrix = new ModelMatrixCreator(new Vector3(8,0,0),new Vector3(0,Mathf.Deg2Rad * 90,Mathf.Deg2Rad * 90),new Vector3(3,8,8));
+        paredDerecha.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
+        return paredDerecha;
+    }
+
+    public GameObject CreateFrontWall()
+    {
+        GameObject paredFrontal = new GameObject();
+        AddMeshAndMaterial(paredFrontal);
+        paredFrontal.name = "Pared_Frontal";
+        modelMatrix = new ModelMatrixCreator(new Vector3(8,0,0),new Vector3(0,0,Mathf.Deg2Rad * 90),new Vector3(3,8,8));
+        paredFrontal.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
+        return paredFrontal;
+    }
+
+    public GameObject CreateBackWall()
+    {
+        GameObject paredTrasera = new GameObject();
+        AddMeshAndMaterial(paredTrasera);
+        paredTrasera.name = "Pared_Trasera";
+        modelMatrix = new ModelMatrixCreator(new Vector3(8,0,8),new Vector3(0,0,Mathf.Deg2Rad * 90),new Vector3(3,8,8));
+        paredTrasera.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix",modelMatrix.GetMatrix4x4());
+        return paredTrasera;
     }
 
     private void AddMeshAndMaterial(GameObject obj)
@@ -26,42 +54,16 @@ public class WallsGenerator
         obj.AddComponent<MeshFilter>();
         obj.GetComponent<MeshFilter>().mesh = new Mesh();
         obj.AddComponent<MeshRenderer>();
-        CreateModel();
-        UpdateMesh(obj);
+        wallModel = new ModelCreator();
+        UpdateMesh(obj,wallModel);
         CreateMaterial(obj);
     }
 
-    private void CreateModel()
+    private void UpdateMesh(GameObject obj, ModelCreator model)
     {
-        vertices = new Vector3[]
-        {
-            new Vector3(0,0,0), //0
-            new Vector3(0,1,0), //1
-            new Vector3(1,0,0), //2
-            new Vector3(1,1,0), //3
-            
-        };
-
-        triangles = new int[]
-        {
-            0,1,2,
-            3,2,1,
-        };
-
-        colores = new Color[]
-        {
-            new Color(1,0,0),
-            new Color(0,0,1),
-            new Color(0,1,0),
-            new Color(1,1,1),
-        };
-    }
-
-    private void UpdateMesh(GameObject obj)
-    {
-        obj.GetComponent<MeshFilter>().mesh.vertices = vertices;
-        obj.GetComponent<MeshFilter>().mesh.triangles = triangles;
-        obj.GetComponent<MeshFilter>().mesh.colors = colores;
+        obj.GetComponent<MeshFilter>().mesh.vertices = model.GetVertices();
+        obj.GetComponent<MeshFilter>().mesh.triangles = model.GetTriangles();
+        obj.GetComponent<MeshFilter>().mesh.colors = model.GetColores();
     }
 
     private void CreateMaterial(GameObject obj)
