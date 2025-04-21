@@ -38,7 +38,7 @@ public class ParserOBJ : MonoBehaviour
             }
             else if (line.StartsWith("f "))
             {
-                string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries); // deja solo un espacio entre caracteres
                 for (int i = 1; i < parts.Length; i++)
                 {
                     string[] vertexData = parts[i].Split('/');
@@ -51,13 +51,16 @@ public class ParserOBJ : MonoBehaviour
     private void createModel()
     {
         // Centralizar modelo
-        Vector3 center = Vector3.zero;
-        
-        foreach (var v in vertices)
+        Vector3 min = vertices[0];
+        Vector3 max = vertices[0];
+
+        foreach (Vector3 v in vertices)
         {
-            center += v;
+            min = Vector3.Min(min, v);
+            max = Vector3.Max(max, v);
         }
-        center /= vertices.Count;
+
+        Vector3 center = (min + max) / 2f;
 
         for (int i = 0; i < vertices.Count; i++)
         {
