@@ -76,10 +76,4 @@ public class WallsGenerator
         Material newMaterial = new Material(Shader.Find("SurfaceShader"));
         obj.GetComponent<MeshRenderer>().material = newMaterial;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

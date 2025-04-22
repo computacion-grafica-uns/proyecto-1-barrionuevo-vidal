@@ -10,6 +10,8 @@ Shader "SurfaceShader"
             #pragma fragment frag
 
             uniform float4x4 _ModelMatrix;
+            uniform float4x4 _ProjectionMatrix;
+            uniform float4x4 _ViewMatrix;
 
             struct appdata {
                 float4 vertex : POSITION;
@@ -26,7 +28,9 @@ Shader "SurfaceShader"
                 v2f o;
                 //o.vertex = UnityObjectToClipPos(v.vertex);
                 o.color = v.color;
-                o.vertex = mul(mul(UNITY_MATRIX_P, mul(UNITY_MATRIX_V,_ModelMatrix)), v.vertex);
+                //o.vertex = mul(mul(UNITY_MATRIX_P, mul(UNITY_MATRIX_V,_ModelMatrix)), v.vertex);
+                o.vertex = mul(UNITY_MATRIX_P, mul(_ViewMatrix, mul(_ModelMatrix, v.vertex)));
+//                o.vertex = mul(_ProjectionMatrix, mul(_ViewMatrix, mul(_ModelMatrix, v.vertex)));
                 return o;
             }
 

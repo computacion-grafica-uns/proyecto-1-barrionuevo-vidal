@@ -7,7 +7,7 @@ public class ParedView : MonoBehaviour
     private WallsGenerator generator;
     private GameObject[] paredes;
     
-    void Start()
+    void Awake()
     {
         generator = new WallsGenerator();
 
@@ -35,9 +35,13 @@ public class ParedView : MonoBehaviour
         };        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateViewMatrix(Vector3 posCamera,Vector3 target,Vector3 up)
     {
+        Matrix4x4 viewMatrix = ViewMatrix.createViewMatrix(posCamera, target, up);
         
+        foreach (GameObject obj in paredes)
+        {
+            obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix",viewMatrix);
+        }
     }
 }

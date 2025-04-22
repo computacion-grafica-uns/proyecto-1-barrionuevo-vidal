@@ -151,11 +151,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86257e0a7e0c4e499f908937b30c5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 1
+  objects: {fileID: 1964719817}
+  position: {x: 0, y: 0, z: 0}
+  forward: {x: 0, y: 0, z: 0}
+  up: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0, z: 0}
+  speed: 5
+  sensitivity: 100
+  xRotation: 0
+  yRotation: 0
   centerPoint: {x: 5, y: 0, z: 4.5}
-  hight: {x: 0, y: 10, z: 0}
-  ratio: 15
-  velocity: 0.5
-  mouseSensitivity: 2
+  hight: {x: 0, y: 7, z: 0}
+  ratio: 25
+  velocity: 2
 --- !u!4 &779993055
 Transform:
   m_ObjectHideFlags: 0
