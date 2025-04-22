@@ -13,12 +13,25 @@ public class ParedView : MonoBehaviour
 
         paredes = new GameObject[]
         {
-            generator.CreateLeftWall(),
+            generator.CreateLeftWall_BigSquare(),
+            generator.CreateLeftWall_SmallScuare(),
             generator.CreateRightWall(),
-            generator.CreateFrontWall(),
-            generator.CreateBackWall(),
-            generator.CreateRoof(),
-            generator.CreateFloor()
+            generator.CreateFrontWall_Square1(),
+            generator.CreateFrontWall_Square2(),
+            generator.CreateFrontWall_Square3(),
+            generator.CreateBackWall_Square1(),
+            generator.CreateBackWall_Square2(),
+            generator.CreateBackWall_Square3(),
+            generator.CreateBackWall_Square4(),
+            generator.CreateRoof_BigSquare(),
+            generator.CreateRoof_SmallScuare(),
+            generator.CreateFloor_BigSquare(),
+            generator.CreateFloor_SmallScuare(),
+            generator.CreateBathroomDoor_Scuare1(),
+            generator.CreateBathroomDoor_Scuare2(),
+            generator.CreateBathroomDoor_Scuare3(),
+            generator.CreateBathroomWall1(),
+            generator.CreateBathroomWall2(),
         };        
     }
 
