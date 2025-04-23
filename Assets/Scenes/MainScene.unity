@@ -153,18 +153,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 1
   objects: {fileID: 1964719817}
+  fov: 60
+  nearClip: 0.1
+  farClip: 100
+  aspect: 3.1666667
   position: {x: 0, y: 0, z: 0}
-  forward: {x: 0, y: 0, z: 0}
+  forwardCamera: {x: 0, y: 0, z: 0}
   up: {x: 0, y: 0, z: 0}
   target: {x: 0, y: 0, z: 0}
   speed: 5
   sensitivity: 100
   xRotation: 0
   yRotation: 0
+  hightFirstPerson: 1.75
   centerPoint: {x: 5, y: 0, z: 4.5}
-  hight: {x: 0, y: 7, z: 0}
   ratio: 25
   velocity: 2
+  hightCamera: 10
 --- !u!4 &779993055
 Transform:
   m_ObjectHideFlags: 0

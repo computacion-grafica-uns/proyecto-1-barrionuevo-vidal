@@ -50,6 +50,7 @@ public class WallsGenerator
         ModelMatrixCreator modelMatrix = new ModelMatrixCreator(position, rotation, scale);
 
         obj.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix", modelMatrix.GetMatrix4x4());
+        //TODO: no debería setearse la matriz de vista?? falta la matriz de proyección
 
         return obj;
     }

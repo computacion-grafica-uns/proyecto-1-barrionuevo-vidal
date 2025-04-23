@@ -7,18 +7,23 @@ public class CameraControl : MonoBehaviour
 
     [SerializeField] private ParedView objects;
 
+    // propiedades camara
+    public float fov = 60f;
+    public float nearClip = 0.1f;
+    public float farClip = 100f;
+    public float aspect = 19/6f; // 4:3
     // primera persona
-    public Vector3 position, forward, up, target;
-    public float speed, sensitivity, xRotation, yRotation;
+    public Vector3 position, forwardCamera, up, target;
+    public float speed, sensitivity, xRotation, yRotation, hightFirstPerson;
 
     // orbital
-    public Vector3 centerPoint, hight;
-    public float ratio, velocity;
+    public Vector3 centerPoint;
+    public float ratio, velocity,hightCamera;
     private float angle;
 
     void Start()
     {
-        forward = Vector3.forward;
+        forwardCamera = Vector3.forward;
         up = Vector3.up;
         position = transform.position;
         CreateCamera();
@@ -27,7 +32,7 @@ public class CameraControl : MonoBehaviour
 
     void Update()
     {
-        checkControls();
+        CheckControls();
 
         switch (mode)
         {
@@ -41,7 +46,7 @@ public class CameraControl : MonoBehaviour
         }
     }
 
-    private void checkControls()
+    private void CheckControls()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -55,6 +60,7 @@ public class CameraControl : MonoBehaviour
                 mode = CameraMode.FirstPerson;
                 
                  // Recalcular rotaciones a partir del forward actual
+                position = new Vector3(position.x,hightFirstPerson, position.z);
                 Vector3 dir = (target - position).normalized;
                 Quaternion rot = Quaternion.LookRotation(dir,up);
                 Vector3 euler = rot.eulerAngles;
@@ -68,24 +74,32 @@ public class CameraControl : MonoBehaviour
     private void CheckControlsFPS()
     {
         Quaternion rotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        
+        Vector3 forward = rotation * Vector3.forward;
+        forward.y = 0;
+        forward.Normalize();
+
+        Vector3 right = rotation * Vector3.right;
+        right.y = 0;
+        right.Normalize();
 
         if (Input.GetKey(KeyCode.W))
-            ApplyTransform(rotation * Vector3.forward);
+            ApplyTransform(forward);
 
         if (Input.GetKey(KeyCode.S))
-            ApplyTransform(rotation * Vector3.back);
+            ApplyTransform(-forward);
 
         if (Input.GetKey(KeyCode.A))
-            ApplyTransform(rotation * Vector3.left);
+            ApplyTransform(right * -1);
 
         if (Input.GetKey(KeyCode.D))
-            ApplyTransform(rotation * Vector3.right);
+            ApplyTransform(right);
     }
 
     private void ApplyTransform(Vector3 deltaPosition)
     {
         position += deltaPosition * Time.deltaTime * speed;
-        target = position + forward;
+        target = position + forwardCamera;
         UpdateView();
     }
 
@@ -96,12 +110,12 @@ public class CameraControl : MonoBehaviour
 
         xRotation -= mouseX;
         yRotation += mouseY;
-        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         Quaternion rotation = Quaternion.Euler(xRotation, yRotation, 0f);
-        forward = rotation * Vector3.forward;
+        forwardCamera = rotation * Vector3.forward;
         up = rotation * Vector3.up;
-        target = position + forward;
+        target = position + forwardCamera;
 
         UpdateView();
     }
@@ -119,7 +133,7 @@ public class CameraControl : MonoBehaviour
         angle += Time.deltaTime * velocity * dir;
         float x = ratio * Mathf.Cos(angle) + centerPoint.x;
         float z = ratio * Mathf.Sin(angle) + centerPoint.z;
-        position = new Vector3(x, hight.y, z);
+        position = new Vector3(x, hightCamera, z);
         target = centerPoint;
         up = Vector3.up;
 
@@ -138,8 +152,6 @@ public class CameraControl : MonoBehaviour
         miCamara.AddComponent<Camera>();
 
         miCamara.transform.position = new Vector3(0,0,-0.5f);
-        //miCamara.transform.rotation = Quaternion.Euler(0,-90,0);
-
         miCamara.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
         miCamara.GetComponent<Camera>().backgroundColor = Color.black;
     }

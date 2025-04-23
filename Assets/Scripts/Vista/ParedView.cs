@@ -37,11 +37,11 @@ public class ParedView : MonoBehaviour
 
     public void UpdateViewMatrix(Vector3 posCamera,Vector3 target,Vector3 up)
     {
-        Matrix4x4 viewMatrix = ViewMatrix.createViewMatrix(posCamera, target, up);
+        ViewMatrixCreator modelviewMatrix = new ViewMatrixCreator(posCamera, target, up);
         
         foreach (GameObject obj in paredes)
         {
-            obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix",viewMatrix);
+            obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix",modelviewMatrix.GetMatrix4x4());
         }
     }
 }
