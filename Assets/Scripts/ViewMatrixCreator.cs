@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class ViewMatrixCreator 
+public class ViewMatrixCreator
 {
     private Matrix4x4 matrix;
 
@@ -10,6 +10,7 @@ public  class ViewMatrixCreator
     {
         matrix = CreateViewMatrix(newPosition,newRotation,newScale);
     }
+    
     public Matrix4x4 CreateViewMatrix(Vector3 pos, Vector3 target, Vector3 up)
     {
         Vector3 F = Vector3.Normalize(target - pos); 

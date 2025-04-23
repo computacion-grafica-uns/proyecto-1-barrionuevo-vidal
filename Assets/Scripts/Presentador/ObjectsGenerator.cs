@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallsGenerator 
+public class ObjectsGenerator 
 {
-    private ModelCreator wallModel;
+    //private ModelCreator wallModel;
+    private ProjectionMatrix projectionMatrix;
     
-    public WallsGenerator(){}
+    public ObjectsGenerator(){}
 
     // Pared izquierda
     public GameObject CreateLeftWall_BigSquare() => CreatePlane("Pared_Izquierda1", new Vector3(0, 0, 15), new Vector3(0, 0, 0), new Vector3(15, 5, 1));
@@ -48,10 +49,13 @@ public class WallsGenerator
         AddMeshAndMaterial(obj);
 
         ModelMatrixCreator modelMatrix = new ModelMatrixCreator(position, rotation, scale);
+        ProjectionMatrix projectionMatrix = new ProjectionMatrix();
+        
 
         obj.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix", modelMatrix.GetMatrix4x4());
-        //TODO: no debería setearse la matriz de vista?? falta la matriz de proyección
-
+        //obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix", viewMatrix);
+        obj.GetComponent<Renderer>().material.SetMatrix("_ProjectionMatrix",GL.GetGPUProjectionMatrix(projectionMatrix.GetMatrix4x4(),true));
+            
         return obj;
     }
 
@@ -60,7 +64,7 @@ public class WallsGenerator
         obj.AddComponent<MeshFilter>();
         obj.GetComponent<MeshFilter>().mesh = new Mesh();
         obj.AddComponent<MeshRenderer>();
-        wallModel = new ModelCreator();
+        ModelCreator wallModel = new ModelCreator();
         UpdateMesh(obj,wallModel);
         CreateMaterial(obj);
     }

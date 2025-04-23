@@ -4,19 +4,19 @@ public class CameraControl : MonoBehaviour
 {
     public enum CameraMode { FirstPerson, Orbital }
     public CameraMode mode = CameraMode.Orbital;
-
     [SerializeField] private ParedView objects;
 
-    // propiedades camara
+    // Propiedades camara
     public float fov = 60f;
     public float nearClip = 0.1f;
     public float farClip = 100f;
     public float aspect = 19/6f; // 4:3
-    // primera persona
+    
+    // Primera Persona
     public Vector3 position, forwardCamera, up, target;
     public float speed, sensitivity, xRotation, yRotation, hightFirstPerson;
 
-    // orbital
+    // Orbital
     public Vector3 centerPoint;
     public float ratio, velocity,hightCamera;
     private float angle;
@@ -27,7 +27,7 @@ public class CameraControl : MonoBehaviour
         up = Vector3.up;
         position = transform.position;
         CreateCamera();
-        ApplyRotationOrbital(0); // empieza en la orbital
+        ApplyRotationOrbital(0); // Empieza en la orbital
     }
 
     void Update()
@@ -37,8 +37,8 @@ public class CameraControl : MonoBehaviour
         switch (mode)
         {
             case CameraMode.FirstPerson:
-                CheckControlsFPS();
-                ApplyRotationFPS();
+                CheckControlsFirstPerson();
+                ApplyRotationFirstPerson();
                 break;
             case CameraMode.Orbital:
                 CheckControlsOrbital();
@@ -53,13 +53,13 @@ public class CameraControl : MonoBehaviour
             if(mode == CameraMode.FirstPerson)
             {
                 mode = CameraMode.Orbital;
-                ApplyRotationOrbital(0); // reinicia la rotación orbital al cambiar de modo
+                ApplyRotationOrbital(0); // Reinicia la rotación orbital al cambiar de modo
             }
             else if (mode == CameraMode.Orbital)
             {
                 mode = CameraMode.FirstPerson;
                 
-                 // Recalcular rotaciones a partir del forward actual
+                // Recalcular rotaciones a partir del forward actual
                 position = new Vector3(position.x,hightFirstPerson, position.z);
                 Vector3 dir = (target - position).normalized;
                 Quaternion rot = Quaternion.LookRotation(dir,up);
@@ -71,7 +71,7 @@ public class CameraControl : MonoBehaviour
         }
     }
 
-    private void CheckControlsFPS()
+    private void CheckControlsFirstPerson()
     {
         Quaternion rotation = Quaternion.Euler(xRotation, yRotation, 0f);
         
@@ -103,7 +103,7 @@ public class CameraControl : MonoBehaviour
         UpdateView();
     }
 
-    private void ApplyRotationFPS()
+    private void ApplyRotationFirstPerson()
     {
         float mouseY = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseX = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;

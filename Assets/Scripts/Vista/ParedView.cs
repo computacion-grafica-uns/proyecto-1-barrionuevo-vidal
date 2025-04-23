@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ParedView : MonoBehaviour
 {
-    private WallsGenerator generator;
+    private ObjectsGenerator generator;
     private GameObject[] paredes;
     
     void Awake()
     {
-        generator = new WallsGenerator();
+        generator = new ObjectsGenerator();
 
         paredes = new GameObject[]
         {
@@ -41,6 +41,7 @@ public class ParedView : MonoBehaviour
         
         foreach (GameObject obj in paredes)
         {
+            obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix",modelviewMatrix.GetMatrix4x4());
             obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix",modelviewMatrix.GetMatrix4x4());
         }
     }

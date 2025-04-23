@@ -2,9 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ProjectionMatrix 
+public class ProjectionMatrix 
 {
-    public static Matrix4x4 createProjectionMatrix(float fov,float aspectRatio,float nPlane,float fPlane)
+    // Propiedades camara
+    public float fov = 60f;
+    public float nPlane = 0.1f;
+    public float fPlane = 100f;
+    public float aspectRatio = 19/6f;
+    private Matrix4x4 matrix;
+    
+    public ProjectionMatrix()
+    {
+        matrix = CreateProjectionMatrix(fov,aspectRatio,nPlane,fPlane);
+    }
+    
+    public Matrix4x4 CreateProjectionMatrix(float fov,float aspectRatio,float nPlane,float fPlane)
     {
         float fovInRadians = fov * Mathf.Deg2Rad;
         
@@ -16,6 +28,11 @@ public static class ProjectionMatrix
         );
         
         matrix = matrix.transpose;
+        return matrix;
+    }
+
+    public Matrix4x4 GetMatrix4x4()
+    {
         return matrix;
     }
 }
