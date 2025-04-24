@@ -5,6 +5,7 @@ public class CameraControl : MonoBehaviour
     public enum CameraMode { FirstPerson, Orbital }
     public CameraMode mode = CameraMode.Orbital;
     [SerializeField] private ParedView objects;
+    [SerializeField] private GeneratorObjects generatorObjects; // nuevo scripts para generar objetos en base al parser
 
     // Propiedades camara
     public float fov = 60f;
@@ -143,6 +144,10 @@ public class CameraControl : MonoBehaviour
     private void UpdateView()
     {
         objects.UpdateViewMatrix(position, target, up);
+
+        // descomentar si se quiere visualizar los objetos parseados .obj
+        
+        //generatorObjects.UpdateViewMatrix(position, target, up);
     }
 
     private void CreateCamera()

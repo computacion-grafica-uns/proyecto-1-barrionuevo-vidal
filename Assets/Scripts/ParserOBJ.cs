@@ -4,12 +4,14 @@ using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
 
-public class ParserOBJ : MonoBehaviour
+public class ParserOBJ 
 {
-    [SerializeField] private string nameArchive;
     private List<Vector3> vertices;
     private List<int> triangles;
-    void Start()
+
+    public void ParseOBJ(){}
+
+    public OBJData GetOBJ(string nameArchive)
     {
         vertices = new List<Vector3>();
         triangles = new List<int>();
@@ -18,11 +20,10 @@ public class ParserOBJ : MonoBehaviour
         StreamReader reader = new StreamReader(path);
         string fileData = reader.ReadToEnd();
         reader.Close();
-        readerLines(fileData);
-        createModel();
+        return ReaderLines(fileData);
     }
 
-    private void readerLines(string fileData)
+    private OBJData ReaderLines(string fileData)
     {
         string[] lines = fileData.Split('\n');
 
@@ -47,9 +48,7 @@ public class ParserOBJ : MonoBehaviour
                 }
             }
         }
-    }
-    private void createModel()
-    {
+
         // Centralizar modelo
         Vector3 min = vertices[0];
         Vector3 max = vertices[0];
@@ -67,23 +66,7 @@ public class ParserOBJ : MonoBehaviour
             vertices[i] -= center;
         }
 
-        Color[] colors = new Color[vertices.Count];
-        
-        for (int i = 0; i < colors.Length; i++)
-        {
-            colors[i] = new Color(Random.Range(0,1f),Random.Range(0,1f), Random.Range(0,1f));
-        }
-
-        // crea la malla
-        Mesh mesh = new Mesh();
-        mesh.vertices = vertices.ToArray();
-        mesh.triangles = triangles.ToArray();
-        mesh.colors = colors;
-        GameObject obj = new GameObject(nameArchive);
-        MeshFilter meshFilter = obj.AddComponent<MeshFilter>();
-        MeshRenderer meshRenderer = obj.AddComponent<MeshRenderer>();
-        
-        meshFilter.mesh = mesh;
-        meshRenderer.material = new Material(Shader.Find("SurfaceShader"));
+        OBJData objData = new OBJData(vertices, triangles);
+        return objData;
     }
 }

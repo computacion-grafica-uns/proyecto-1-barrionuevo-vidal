@@ -42,7 +42,6 @@ public class ParedView : MonoBehaviour
         foreach (GameObject obj in paredes)
         {
             obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix",modelviewMatrix.GetMatrix4x4());
-            obj.GetComponent<Renderer>().material.SetMatrix("_ViewMatrix",modelviewMatrix.GetMatrix4x4());
         }
     }
 }
