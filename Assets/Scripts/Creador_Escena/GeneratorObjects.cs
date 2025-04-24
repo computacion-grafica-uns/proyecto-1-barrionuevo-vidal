@@ -10,11 +10,10 @@ public class GeneratorObjects : MonoBehaviour
     public List<OBJData> objectsData;
     private ParserOBJ parserObj;
 
-    void Start()
+    void Awake()
     {
         parserObj = new ParserOBJ();
         objects = new List<GameObject>();
-        objectsData = new List<OBJData>();
         CreateObjects();
     }
 
@@ -22,8 +21,8 @@ public class GeneratorObjects : MonoBehaviour
     {
         foreach (OBJData info in objectsData)
         {
-            OBJModel objData = parserObj.GetOBJ(info.name);
-            CreateModel(objData.GetVertices(), objData.GetTriangles(), info);
+            OBJModel objModel = parserObj.GetOBJ(info.name);
+            CreateModel(objModel.GetVertices(), objModel.GetTriangles(), info);
         }
     }
 

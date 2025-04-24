@@ -3,19 +3,20 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public enum CameraMode { FirstPerson, Orbital }
-    public CameraMode mode = CameraMode.Orbital;
+    public CameraMode mode;
     //[SerializeField] private ParedView objects;
     [SerializeField] private GeneratorObjects generatorObjects; // nuevo scripts para generar objetos en base al parser
 
-    // Propiedades camara
+    // Propiedades camara (no se usan acá)
     public float fov = 60f;
     public float nearClip = 0.1f;
     public float farClip = 100f;
     public float aspect = 19/6f;
     
     // Primera Persona
-    public Vector3 position, forwardCamera, up, target;
-    public float speed, sensitivity, xRotation, yRotation, hightFirstPerson;
+    public float speed, sensitivity, hightFirstPerson;
+    private float xRotation, yRotation;
+    private Vector3 position, forwardCamera, up, target;
 
     // Orbital
     public Vector3 centerPoint;
@@ -26,9 +27,12 @@ public class CameraControl : MonoBehaviour
     {
         forwardCamera = Vector3.forward;
         up = Vector3.up;
-        position = transform.position;
+        //position = transform.position;
         CreateCamera();
-        ApplyRotationOrbital(0); // Empieza en la orbital
+        if(mode == CameraMode.Orbital)
+            ApplyRotationOrbital(0); // Empieza en la orbital
+        else
+            position = new Vector3(position.x,hightFirstPerson, position.z);
     }
 
     void Update()
@@ -146,12 +150,7 @@ public class CameraControl : MonoBehaviour
         //objects.UpdateViewMatrix(position, target, up);
 
         // descomentar si se quiere visualizar los objetos parseados .obj
-        if (generatorObjects != null)
-        {
-            Debug.Log("No es nulo");
-            generatorObjects.UpdateViewMatrix(position, target, up); // ESTA LINEA DA UN ERROR
-        }
-        //generatorObjects.UpdateViewMatrix(position, target, up);
+        generatorObjects.UpdateViewMatrix(position, target, up); 
     }
 
     private void CreateCamera()

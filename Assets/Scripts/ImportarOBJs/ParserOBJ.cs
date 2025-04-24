@@ -39,12 +39,30 @@ public class ParserOBJ
             }
             else if (line.StartsWith("f "))
             {
-                string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries); // deja solo un espacio entre caracteres
+                string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                List<int> faceIndices = new List<int>();
+
                 for (int i = 1; i < parts.Length; i++)
                 {
                     string[] vertexData = parts[i].Split('/');
                     int vertexIndex = int.Parse(vertexData[0]) - 1;
-                    triangles.Add(vertexIndex);
+                    faceIndices.Add(vertexIndex);
+                }
+
+                if (faceIndices.Count == 3)
+                {
+                    triangles.AddRange(faceIndices); // triángulo
+                }
+                else if (faceIndices.Count == 4)
+                {
+                    // quad: se crean dos triángulos
+                    triangles.Add(faceIndices[0]);
+                    triangles.Add(faceIndices[1]);
+                    triangles.Add(faceIndices[2]);
+
+                    triangles.Add(faceIndices[0]);
+                    triangles.Add(faceIndices[2]);
+                    triangles.Add(faceIndices[3]);
                 }
             }
         }

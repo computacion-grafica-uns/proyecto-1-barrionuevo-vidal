@@ -151,20 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86257e0a7e0c4e499f908937b30c5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 1
+  mode: 0
   generatorObjects: {fileID: 1964719818}
   fov: 60
   nearClip: 0.1
   farClip: 100
   aspect: 3.1666667
-  position: {x: 0, y: 0, z: 0}
-  forwardCamera: {x: 0, y: 0, z: 0}
-  up: {x: 0, y: 0, z: 0}
-  target: {x: 0, y: 0, z: 0}
   speed: 5
   sensitivity: 100
-  xRotation: 0
-  yRotation: 0
   hightFirstPerson: 1.75
   centerPoint: {x: 5, y: 0, z: 4.5}
   ratio: 25
@@ -179,7 +173,7 @@ Transform:
   m_GameObject: {fileID: 779993053}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2392311, y: 3.4251218, z: -4.456472}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -243,18 +237,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsData:
-  - name: Bed1
-    position: {x: 0, y: 0, z: 0}
+  - name: estructura
+    position: {x: 0, y: 3, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0, y: 0, z: 0}
-  - name: cubo
-    position: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: sofa
+    position: {x: -8.4, y: 1.1, z: 5.8}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: mesaGrande
+    position: {x: -5, y: 1, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0, y: 0, z: 0}
-  - name: Estructura
-    position: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: silla1
+    position: {x: -4.3, y: 1, z: 0.8}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: silla2
+    position: {x: -4.3, y: 1, z: -0.8}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: silla3
+    position: {x: -5, y: 1, z: -2.3}
+    rotation: {x: 0, y: -45, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: silla1
+    position: {x: -5.55, y: 1, z: 0.75}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: silla1
+    position: {x: -5.55, y: 1, z: -0.85}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: silla2
+    position: {x: -5, y: 1, z: 1.62}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: pava
+    position: {x: -4.5, y: 1.65, z: -1.6}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: mate
+    position: {x: -4.75, y: 1.6, z: -1.6}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.05, y: 0.05, z: 0.05}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
