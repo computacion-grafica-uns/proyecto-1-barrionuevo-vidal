@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class GeneratorObjects : MonoBehaviour
 {
-    public List<string> nameObjects; 
+    //public List<string> nameObjects; 
     
-    // acá ponemos una list<Vector3> de pos por cada OBJ??
     private List<GameObject> objects;
+    public List<OBJData> objectsData;
     private ParserOBJ parserObj;
 
     void Start()
     {
         parserObj = new ParserOBJ();
         objects = new List<GameObject>();
+        objectsData = new List<OBJData>();
         CreateObjects();
     }
 
     private void CreateObjects()
     {
-        foreach (string name in nameObjects)
+        foreach (OBJData info in objectsData)
         {
-            OBJData objData = parserObj.GetOBJ(name);
-            CreateModel(objData.GetVertices(), objData.GetTriangles(), name);
+            OBJModel objData = parserObj.GetOBJ(info.name);
+            CreateModel(objData.GetVertices(), objData.GetTriangles(), info);
         }
     }
 
-    private void CreateModel(List<Vector3> vertices,List<int> triangles,string nameArchive)
+    private void CreateModel(List<Vector3> vertices,List<int> triangles,OBJData info)
     {
         Color[] colors = new Color[vertices.Count];
         
@@ -35,20 +36,21 @@ public class GeneratorObjects : MonoBehaviour
             colors[i] = new Color(Random.Range(0,1f),Random.Range(0,1f), Random.Range(0,1f));
         }
 
-        // crea la malla
+        // Crea la malla
         Mesh mesh = new Mesh();
         mesh.vertices = vertices.ToArray();
         mesh.triangles = triangles.ToArray();
         mesh.colors = colors;
-        GameObject obj = new GameObject(nameArchive);
+        GameObject obj = new GameObject(info.name);
         MeshFilter meshFilter = obj.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = obj.AddComponent<MeshRenderer>();
         
         meshFilter.mesh = mesh;
         meshRenderer.material = new Material(Shader.Find("SurfaceShader"));
     
-        //TODO: donde guardamos info de la pos de cada objeto??
-        ModelMatrixCreator modelMatrix = new ModelMatrixCreator(Vector3.zero, Vector3.zero, Vector3.one);
+        //USAR CLASE CON LA INFO DE LOS OBJ: donde guardamos info de la pos, rot, escala y nombre de cada objeto??
+        Vector3 rotRad = info.rotation * Mathf.Deg2Rad;
+        ModelMatrixCreator modelMatrix = new ModelMatrixCreator(info.position, rotRad, info.scale);
         ProjectionMatrix projectionMatrix = new ProjectionMatrix();
         
         obj.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix", modelMatrix.GetMatrix4x4());

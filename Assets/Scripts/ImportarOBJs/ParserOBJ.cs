@@ -11,7 +11,7 @@ public class ParserOBJ
 
     public void ParseOBJ(){}
 
-    public OBJData GetOBJ(string nameArchive)
+    public OBJModel GetOBJ(string nameArchive)
     {
         vertices = new List<Vector3>();
         triangles = new List<int>();
@@ -23,7 +23,7 @@ public class ParserOBJ
         return ReaderLines(fileData);
     }
 
-    private OBJData ReaderLines(string fileData)
+    private OBJModel ReaderLines(string fileData)
     {
         string[] lines = fileData.Split('\n');
 
@@ -66,7 +66,7 @@ public class ParserOBJ
             vertices[i] -= center;
         }
 
-        OBJData objData = new OBJData(vertices, triangles);
+        OBJModel objData = new OBJModel(vertices, triangles);
         return objData;
     }
 }
