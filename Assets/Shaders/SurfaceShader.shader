@@ -26,7 +26,6 @@ Shader "SurfaceShader"
             v2f vert(appdata v)
             {
                 v2f o;
-                //o.vertex = UnityObjectToClipPos(v.vertex);
                 o.color = v.color;
                 //o.vertex = mul(mul(UNITY_MATRIX_P, mul(UNITY_MATRIX_V,_ModelMatrix)), v.vertex);
                 o.vertex = mul(mul(_ProjectionMatrix, mul(_ViewMatrix,_ModelMatrix)), v.vertex);
@@ -35,7 +34,6 @@ Shader "SurfaceShader"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                //return half4(1.0f,0.0f,0.0f,1.0f);
                 return (i.color);
             }
             ENDCG

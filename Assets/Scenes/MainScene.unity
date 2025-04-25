@@ -154,12 +154,12 @@ MonoBehaviour:
   mode: 0
   generatorObjects: {fileID: 1964719818}
   speed: 5
-  sensitivity: 800
+  sensitivity: 600
   hightFirstPerson: 1.75
-  centerPoint: {x: 5, y: 0, z: 4.5}
-  ratio: 25
+  centerPoint: {x: -0.85, y: 1.75, z: -2.6}
+  ratio: 2
   velocity: 2
-  hightCamera: 10
+  hightCamera: 2
 --- !u!4 &779993055
 Transform:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsData:
-  - name: estructura
+  - name: Estructura
     position: {x: 0, y: 3, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}

@@ -5,12 +5,6 @@ public class CameraControl : MonoBehaviour
     public enum CameraMode { FirstPerson, Orbital }
     public CameraMode mode;
     [SerializeField] private GeneratorObjects generatorObjects;
-
-    // Propiedades camara (no se usan acá)
-    // public float fov = 60f;
-    // public float nearClip = 0.1f;
-    // public float farClip = 100f;
-    // public float aspect = 19/6f;
     
     // Primera Persona
     public float speed, sensitivity, hightFirstPerson;
