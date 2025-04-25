@@ -6,6 +6,7 @@ public class OBJModel
 {
     private List<Vector3> vertices;
     private List<int> triangles;
+    
     public OBJModel(List<Vector3>vertices,List<int> triangles)
     {
         this.vertices = vertices;

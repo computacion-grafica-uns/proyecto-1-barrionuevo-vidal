@@ -155,7 +155,7 @@ MonoBehaviour:
   generatorObjects: {fileID: 1964719818}
   speed: 5
   sensitivity: 600
-  hightFirstPerson: 2
+  hightFirstPerson: 1.75
   centerPoint: {x: -0.85, y: 1.75, z: -2.6}
   ratio: 2
   velocity: 2
@@ -221,61 +221,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsData:
   - name: Estructura
-    position: {x: 0, y: 3, z: 0}
+    position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.7735849, g: 0.3977394, b: 0.51897997, a: 1}
   - name: sofa
-    position: {x: -8.4, y: 1.1, z: 5.8}
+    position: {x: -8.4, y: 0, z: 5.8}
     rotation: {x: 0, y: 90, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.7169812, g: 0.53866285, b: 0.1251335, a: 1}
   - name: mesaGrande
-    position: {x: -5, y: 1, z: 0}
+    position: {x: -5, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.8773585, g: 0.6182592, b: 0.31038627, a: 1}
   - name: silla1
-    position: {x: -4.3, y: 1, z: 0.8}
+    position: {x: -4.3, y: 0, z: 0.8}
     rotation: {x: 0, y: 180, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.7075472, g: 0.48749396, b: 0.21693665, a: 1}
   - name: silla2
-    position: {x: -4.3, y: 1, z: -0.8}
+    position: {x: -4.3, y: 0, z: -0.8}
     rotation: {x: 0, y: 180, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.6415094, g: 0.31053662, b: 0.11196155, a: 1}
   - name: silla3
-    position: {x: -5, y: 1, z: -2.3}
+    position: {x: -5, y: 0, z: -2.3}
     rotation: {x: 0, y: -45, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.8584906, g: 0.5295825, b: 0.33610713, a: 1}
   - name: silla1
-    position: {x: -5.55, y: 1, z: 0.75}
+    position: {x: -5.55, y: 0, z: 0.75}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.7264151, g: 0.29391447, b: 0.0788092, a: 1}
   - name: silla1
-    position: {x: -5.55, y: 1, z: -0.85}
+    position: {x: -5.55, y: 0, z: -0.85}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.7254902, g: 0.29411766, b: 0.078431375, a: 1}
   - name: silla2
-    position: {x: -5, y: 1, z: 1.62}
+    position: {x: -5, y: 0, z: 1.62}
     rotation: {x: 0, y: 90, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.6509434, g: 0.27896738, b: 0.15659486, a: 1}
   - name: pava
-    position: {x: -4.5, y: 1.65, z: -1.6}
+    position: {x: -4.5, y: 1.1, z: -1.6}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.754717, g: 0.5517978, b: 0.5517978, a: 1}
   - name: mate
-    position: {x: -4.75, y: 1.6, z: -1.6}
+    position: {x: -4.75, y: 1.1, z: -1.6}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 0.05, y: 0.05, z: 0.05}
+    colorModel: {r: 0.7735849, g: 0.46569058, b: 0.25907797, a: 1}
   - name: Bed1
-    position: {x: 1, y: 1, z: -6.2}
+    position: {x: 1, y: 0, z: -6.2}
     rotation: {x: 0, y: 90, z: 0}
     scale: {x: 0.1, y: 0.1, z: 0.1}
+    colorModel: {r: 0.7264151, g: 0.5245857, b: 0.35978106, a: 1}
   - name: closet
-    position: {x: 6, y: 2.5, z: -6.5}
+    position: {x: 6, y: 0, z: -6.5}
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 1.7, y: 1.7, z: 1.7}
+    colorModel: {r: 0.8584906, g: 0.7251276, b: 0.48998755, a: 1}
   - name: FanDeTecho
-    position: {x: -3, y: 5, z: -2.5}
+    position: {x: -3, y: 3.1, z: -2.5}
     rotation: {x: 0, y: -90, z: 0}
-    scale: {x: 0.01, y: 0.01, z: 0.01}
+    scale: {x: 0.012, y: 0.012, z: 0.012}
+    colorModel: {r: 0.3301887, g: 0.31305626, b: 0.31305626, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

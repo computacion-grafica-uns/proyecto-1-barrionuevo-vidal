@@ -8,7 +8,7 @@ public class ProjectionMatrix
     public float fov = 60f;
     public float nPlane = 0.1f;
     public float fPlane = 100f;
-    public float aspectRatio = 16/9f; // Tomar ancho y alto, y dividir ancho sobre alto.
+    public float aspectRatio = (float)Screen.width / Screen.height; // Tomar ancho y alto, y dividir ancho sobre alto.
     private Matrix4x4 matrix;
     
     public ProjectionMatrix()

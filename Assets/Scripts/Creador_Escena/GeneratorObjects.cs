@@ -16,7 +16,14 @@ public class GeneratorObjects : MonoBehaviour
     }
 
     private void CreateObjects()
-    {
+    {   
+        // Se crea el primer objeto, ya que si toma un color solido no se diferencia entre los objetos, 
+        // los colores de los vertices variarán un poco
+        /*OBJData info =   objectsData[0];
+        OBJModel objModel = parserObj.GetOBJ(info.name);
+        CreateModel(objModel.GetVertices(), objModel.GetTriangles(), info,.2f);
+        */
+        // el resto de los objetos se crean con un color solido
         foreach (OBJData info in objectsData)
         {
             OBJModel objModel = parserObj.GetOBJ(info.name);
@@ -26,14 +33,7 @@ public class GeneratorObjects : MonoBehaviour
 
     private void CreateModel(List<Vector3> vertices,List<int> triangles,OBJData info)
     {
-        Color[] colors = new Color[vertices.Count];
-        
-        for (int i = 0; i < colors.Length; i++)
-        {
-            colors[i] = new Color(Random.Range(0,1f),Random.Range(0,1f), Random.Range(0,1f));
-        }
-
-        // Crea la malla
+        Color[] colors = PaintVertices(vertices.ToArray(),info.colorModel,.2f);
         Mesh mesh = new Mesh();
         mesh.vertices = vertices.ToArray();
         mesh.triangles = triangles.ToArray();
@@ -45,7 +45,6 @@ public class GeneratorObjects : MonoBehaviour
         meshFilter.mesh = mesh;
         meshRenderer.material = new Material(Shader.Find("SurfaceShader"));
     
-        
         Vector3 rotRad = info.rotation * Mathf.Deg2Rad;
         ModelMatrixCreator modelMatrix = new ModelMatrixCreator(info.position, rotRad, info.scale);
         ProjectionMatrix projectionMatrix = new ProjectionMatrix();
@@ -54,6 +53,18 @@ public class GeneratorObjects : MonoBehaviour
         obj.GetComponent<Renderer>().material.SetMatrix("_ProjectionMatrix",GL.GetGPUProjectionMatrix(projectionMatrix.GetMatrix4x4(),true));
         
         objects.Add(obj);
+    }
+
+    private Color[] PaintVertices(Vector3[] vertices, Color colorModel,float deltaColor)
+    {
+        Color[] colors = new Color[vertices.Length];
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            float colorValue = Random.Range(-deltaColor, deltaColor);
+            colors[i] = new Color(colorModel.r + colorValue, colorModel.g + colorValue, colorModel.b  + colorValue);
+        }
+
+        return colors;
     }
 
     public void UpdateViewMatrix(Vector3 posCamera,Vector3 target,Vector3 up)
