@@ -4,14 +4,13 @@ public class CameraControl : MonoBehaviour
 {
     public enum CameraMode { FirstPerson, Orbital }
     public CameraMode mode;
-    //[SerializeField] private ParedView objects;
-    [SerializeField] private GeneratorObjects generatorObjects; // nuevo scripts para generar objetos en base al parser
+    [SerializeField] private GeneratorObjects generatorObjects;
 
     // Propiedades camara (no se usan acá)
-    public float fov = 60f;
-    public float nearClip = 0.1f;
-    public float farClip = 100f;
-    public float aspect = 19/6f;
+    // public float fov = 60f;
+    // public float nearClip = 0.1f;
+    // public float farClip = 100f;
+    // public float aspect = 19/6f;
     
     // Primera Persona
     public float speed, sensitivity, hightFirstPerson;
@@ -20,15 +19,16 @@ public class CameraControl : MonoBehaviour
 
     // Orbital
     public Vector3 centerPoint;
-    public float ratio, velocity,hightCamera;
+    public float ratio, velocity, hightCamera;
     private float angle;
 
     void Start()
     {
         forwardCamera = Vector3.forward;
         up = Vector3.up;
-        //position = transform.position;
+        
         CreateCamera();
+        
         if(mode == CameraMode.Orbital)
             ApplyRotationOrbital(0); // Empieza en la orbital
         else
@@ -147,9 +147,6 @@ public class CameraControl : MonoBehaviour
 
     private void UpdateView()
     {
-        //objects.UpdateViewMatrix(position, target, up);
-
-        // descomentar si se quiere visualizar los objetos parseados .obj
         generatorObjects.UpdateViewMatrix(position, target, up); 
     }
 

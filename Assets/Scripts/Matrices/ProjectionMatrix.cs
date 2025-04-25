@@ -8,7 +8,7 @@ public class ProjectionMatrix
     public float fov = 60f;
     public float nPlane = 0.1f;
     public float fPlane = 100f;
-    public float aspectRatio = 19/6f;
+    public float aspectRatio = 16/9f;
     private Matrix4x4 matrix;
     
     public ProjectionMatrix()

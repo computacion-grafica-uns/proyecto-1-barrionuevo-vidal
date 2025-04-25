@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GeneratorObjects : MonoBehaviour
 {
-    //public List<string> nameObjects; 
-    
     private List<GameObject> objects;
     public List<OBJData> objectsData;
     private ParserOBJ parserObj;
