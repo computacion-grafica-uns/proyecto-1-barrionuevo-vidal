@@ -26,12 +26,13 @@ public class ParserOBJ
     private OBJModel ReaderLines(string fileData)
     {
         string[] lines = fileData.Split('\n');
-
+        
         foreach (string line in lines)
         {
             if (line.StartsWith("v "))
             {
-                string[] parts = line.Split(' ');
+                string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                
                 float x = float.Parse(parts[1],System.Globalization.CultureInfo.InvariantCulture);
                 float y = float.Parse(parts[2],System.Globalization.CultureInfo.InvariantCulture);
                 float z = float.Parse(parts[3],System.Globalization.CultureInfo.InvariantCulture);

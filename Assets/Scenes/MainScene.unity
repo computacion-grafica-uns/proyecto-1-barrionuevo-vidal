@@ -155,7 +155,7 @@ MonoBehaviour:
   generatorObjects: {fileID: 1964719818}
   speed: 5
   sensitivity: 600
-  hightFirstPerson: 1.75
+  hightFirstPerson: 2
   centerPoint: {x: -0.85, y: 1.75, z: -2.6}
   ratio: 2
   velocity: 2
@@ -264,6 +264,18 @@ MonoBehaviour:
     position: {x: -4.75, y: 1.6, z: -1.6}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 0.05, y: 0.05, z: 0.05}
+  - name: Bed1
+    position: {x: 1, y: 1, z: -6.2}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.1, y: 0.1, z: 0.1}
+  - name: closet
+    position: {x: 6, y: 2.5, z: -6.5}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 1.7, y: 1.7, z: 1.7}
+  - name: FanDeTecho
+    position: {x: -3, y: 5, z: -2.5}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 0.01, y: 0.01, z: 0.01}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

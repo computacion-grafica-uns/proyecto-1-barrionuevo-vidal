@@ -45,7 +45,7 @@ public class GeneratorObjects : MonoBehaviour
         meshFilter.mesh = mesh;
         meshRenderer.material = new Material(Shader.Find("SurfaceShader"));
     
-        //USAR CLASE CON LA INFO DE LOS OBJ: donde guardamos info de la pos, rot, escala y nombre de cada objeto??
+        
         Vector3 rotRad = info.rotation * Mathf.Deg2Rad;
         ModelMatrixCreator modelMatrix = new ModelMatrixCreator(info.position, rotRad, info.scale);
         ProjectionMatrix projectionMatrix = new ProjectionMatrix();
