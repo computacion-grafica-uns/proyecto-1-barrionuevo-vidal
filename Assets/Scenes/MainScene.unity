@@ -229,10 +229,10 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.5754717, g: 0.3610102, b: 0, a: 1}
+    colorModel: {r: 0.41509432, g: 0.21960784, b: 0, a: 1}
   - name: sofa
-    position: {x: -8.4, y: 0, z: 5.8}
-    rotation: {x: 0, y: 90, z: 0}
+    position: {x: -8.4, y: 0, z: -5.8}
+    rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
     colorModel: {r: 0.7169812, g: 0.53866285, b: 0.1251335, a: 1}
   - name: mesaGrande
@@ -274,7 +274,7 @@ MonoBehaviour:
     position: {x: -4.5, y: 1.1, z: -1.6}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.754717, g: 0.5517978, b: 0.5517978, a: 1}
+    colorModel: {r: 0.5471698, g: 0.508455, b: 0.508455, a: 1}
   - name: mate
     position: {x: -4.75, y: 1.1, z: -1.6}
     rotation: {x: 0, y: 0, z: 0}
@@ -289,12 +289,67 @@ MonoBehaviour:
     position: {x: 6, y: 0, z: -6.5}
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 1.7, y: 1.7, z: 1.7}
-    colorModel: {r: 0.8584906, g: 0.7251276, b: 0.48998755, a: 1}
+    colorModel: {r: 0.5137255, g: 0.29803923, b: 0, a: 1}
   - name: FanDeTecho
     position: {x: -3, y: 3.1, z: -2.5}
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 0.012, y: 0.012, z: 0.012}
     colorModel: {r: 0.3301887, g: 0.31305626, b: 0.31305626, a: 1}
+  - name: Bath
+    position: {x: 1, y: 0, z: 5.4}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 1.5, y: 1.3, z: 1.6}
+    colorModel: {r: 0.62352943, g: 0.56078434, b: 0.56078434, a: 1}
+  - name: mirror
+    position: {x: 4.9, y: 1.4, z: 3}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.62352943, g: 0.56078434, b: 0.56078434, a: 1}
+  - name: toilet2
+    position: {x: 3.6, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1, z: 1.3}
+    colorModel: {r: 0.62352943, g: 0.56078434, b: 0.56078434, a: 1}
+  - name: sink
+    position: {x: 4.6, y: 0, z: 3}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 1.3, y: 1, z: 1.3}
+    colorModel: {r: 0.7830189, g: 0.6832948, b: 0.6832948, a: 1}
+  - name: KitchenCabinet1
+    position: {x: -1.5, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.65882355, g: 0.50980395, b: 0.3019608, a: 1}
+  - name: KitchenCabinet1
+    position: {x: -2.8, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.65882355, g: 0.50980395, b: 0.3019608, a: 1}
+  - name: KitchenStoveWithOven
+    position: {x: -4.1, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.33962262, g: 0.31371722, b: 0.27714488, a: 1}
+  - name: KitchenCabinet1
+    position: {x: -5.4, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.65882355, g: 0.50980395, b: 0.3019608, a: 1}
+  - name: KitchenCabinet1WithSink
+    position: {x: -6.7, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.6603774, g: 0.5111176, b: 0.30215383, a: 1}
+  - name: Fridge
+    position: {x: -8, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.9056604, g: 0.8611606, b: 0.79886085, a: 1}
+  - name: KitchenCabinet1
+    position: {x: -9.3, y: 0, z: 7}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.65882355, g: 0.50980395, b: 0.3019608, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
