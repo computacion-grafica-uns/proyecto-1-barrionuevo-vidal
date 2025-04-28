@@ -7,6 +7,7 @@ public class GeneratorObjects : MonoBehaviour
     private List<GameObject> objects;
     public List<OBJData> objectsData;
     private ParserOBJ parserObj;
+    //private Matrix4x4 matrizPadre;
 
     void Awake()
     {
@@ -47,6 +48,12 @@ public class GeneratorObjects : MonoBehaviour
     
         Vector3 rotRad = info.rotation * Mathf.Deg2Rad;
         ModelMatrixCreator modelMatrix = new ModelMatrixCreator(info.position, rotRad, info.scale);
+        // if(matrizPadre == null)
+        // {
+        //     matrizPadre = modelMatrix.GetMatrix4x4();
+        // } else {
+        //     modelMatrix.SetMatrix4x4(modelMatrix.GetMatrix4x4() * matrizPadre);
+        // }
         ProjectionMatrix projectionMatrix = new ProjectionMatrix();
         
         obj.GetComponent<Renderer>().material.SetMatrix("_ModelMatrix", modelMatrix.GetMatrix4x4());

@@ -234,7 +234,7 @@ MonoBehaviour:
     position: {x: -8.4, y: 0, z: -5.8}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.7169812, g: 0.53866285, b: 0.1251335, a: 1}
+    colorModel: {r: 0.7169812, g: 0.23529412, b: 0.1251335, a: 1}
   - name: mesaGrande
     position: {x: -5, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
@@ -244,12 +244,12 @@ MonoBehaviour:
     position: {x: -4.3, y: 0, z: 0.8}
     rotation: {x: 0, y: 180, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.7075472, g: 0.48749396, b: 0.21693665, a: 1}
+    colorModel: {r: 0.8588236, g: 0.5294118, b: 0.3372549, a: 1}
   - name: silla2
     position: {x: -4.3, y: 0, z: -0.8}
     rotation: {x: 0, y: 180, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.6415094, g: 0.31053662, b: 0.11196155, a: 1}
+    colorModel: {r: 0.8588236, g: 0.5294118, b: 0.3372549, a: 1}
   - name: silla3
     position: {x: -5, y: 0, z: -2.3}
     rotation: {x: 0, y: -45, z: 0}
@@ -259,17 +259,17 @@ MonoBehaviour:
     position: {x: -5.55, y: 0, z: 0.75}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.7264151, g: 0.29391447, b: 0.0788092, a: 1}
+    colorModel: {r: 0.8588236, g: 0.5294118, b: 0.3372549, a: 1}
   - name: silla1
     position: {x: -5.55, y: 0, z: -0.85}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.7254902, g: 0.29411766, b: 0.078431375, a: 1}
+    colorModel: {r: 0.8588236, g: 0.5294118, b: 0.3372549, a: 1}
   - name: silla2
     position: {x: -5, y: 0, z: 1.62}
     rotation: {x: 0, y: 90, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.6509434, g: 0.27896738, b: 0.15659486, a: 1}
+    colorModel: {r: 0.8588236, g: 0.5294118, b: 0.3372549, a: 1}
   - name: pava
     position: {x: -4.5, y: 1.1, z: -1.6}
     rotation: {x: 0, y: 0, z: 0}
@@ -279,17 +279,17 @@ MonoBehaviour:
     position: {x: -4.75, y: 1.1, z: -1.6}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 0.05, y: 0.05, z: 0.05}
-    colorModel: {r: 0.7735849, g: 0.46569058, b: 0.25907797, a: 1}
+    colorModel: {r: 0.4156863, g: 0.21960786, b: 0, a: 1}
   - name: Bed1
     position: {x: 1, y: 0, z: -6.2}
     rotation: {x: 0, y: 90, z: 0}
-    scale: {x: 0.1, y: 0.1, z: 0.1}
-    colorModel: {r: 0.7264151, g: 0.5245857, b: 0.35978106, a: 1}
+    scale: {x: 0.1, y: 0.15, z: 0.15}
+    colorModel: {r: 0.7497479, g: 0.73001957, b: 0.8018868, a: 1}
   - name: closet
     position: {x: 6, y: 0, z: -6.5}
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 1.7, y: 1.7, z: 1.7}
-    colorModel: {r: 0.5137255, g: 0.29803923, b: 0, a: 1}
+    colorModel: {r: 0.4156863, g: 0.21960786, b: 0, a: 1}
   - name: FanDeTecho
     position: {x: -3, y: 3.1, z: -2.5}
     rotation: {x: 0, y: -90, z: 0}
@@ -350,6 +350,26 @@ MonoBehaviour:
     rotation: {x: 0, y: 90, z: 0}
     scale: {x: 1.3, y: 1.3, z: 1.3}
     colorModel: {r: 0.65882355, g: 0.50980395, b: 0.3019608, a: 1}
+  - name: eb_house_plant_01
+    position: {x: -9, y: 0, z: 1}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.05, y: 0.05, z: 0.05}
+    colorModel: {r: 0.30196077, g: 0.44705883, b: 0.33046094, a: 1}
+  - name: wooddoor01a
+    position: {x: 10, y: 0, z: -3}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.01, y: 0.01, z: 0.01}
+    colorModel: {r: 0.4528302, g: 0.26471037, b: 0.16019936, a: 1}
+  - name: wooddoor01a
+    position: {x: 1.5, y: 0, z: 0.5}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.01, y: 0.01, z: 0.01}
+    colorModel: {r: 0.4528302, g: 0.26471037, b: 0.16019936, a: 1}
+  - name: GeneralStore_Window
+    position: {x: -10, y: 2.5, z: -5.5}
+    rotation: {x: 0, y: 90, z: 90}
+    scale: {x: 2, y: 2.9, z: 1}
+    colorModel: {r: 0.26666665, g: 0.552229, b: 0.77254903, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
