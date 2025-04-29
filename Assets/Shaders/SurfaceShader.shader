@@ -27,7 +27,6 @@ Shader "SurfaceShader"
             {
                 v2f o;
                 o.color = v.color;
-                //o.vertex = mul(mul(UNITY_MATRIX_P, mul(UNITY_MATRIX_V,_ModelMatrix)), v.vertex);
                 o.vertex = mul(mul(_ProjectionMatrix, mul(_ViewMatrix,_ModelMatrix)), v.vertex);
                 return o;
             }

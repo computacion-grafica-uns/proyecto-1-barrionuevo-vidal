@@ -16,10 +16,6 @@ public class ModelMatrixCreator
         return matrix;
     }
 
-    // public void SetMatrix4x4(Matrix4x4 matrix){
-    //     this.matrix = matrix;
-    // }
-
     private Matrix4x4 CreateModelMatrix(Vector3 newPosition, Vector3 newRotation, Vector3 newScale)
     {
         Matrix4x4 positionMatrix = new Matrix4x4(
