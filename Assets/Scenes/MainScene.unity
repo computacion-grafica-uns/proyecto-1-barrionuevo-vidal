@@ -224,12 +224,12 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.8773585, g: 0.8152813, b: 0.835327, a: 1}
+    colorModel: {r: 0.7264151, g: 0.6339, b: 0.66111034, a: 1}
   - name: EstructuraTechoPiso
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    colorModel: {r: 0.41509432, g: 0.21960784, b: 0, a: 1}
+    colorModel: {r: 0.38679248, g: 0.2396282, b: 0.0748042, a: 1}
   - name: sofa
     position: {x: -8, y: 0, z: -5.5}
     rotation: {x: 0, y: 0, z: 0}
@@ -280,11 +280,6 @@ MonoBehaviour:
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 0.05, y: 0.05, z: 0.05}
     colorModel: {r: 0.4156863, g: 0.21960786, b: 0, a: 1}
-  - name: Bed1
-    position: {x: 1, y: 0, z: -6.2}
-    rotation: {x: 0, y: 90, z: 0}
-    scale: {x: 0.1, y: 0.15, z: 0.15}
-    colorModel: {r: 0.7497479, g: 0.73001957, b: 0.8018868, a: 1}
   - name: closet
     position: {x: 6, y: 0, z: -6.5}
     rotation: {x: 0, y: -90, z: 0}
@@ -299,7 +294,7 @@ MonoBehaviour:
     position: {x: -3, y: 3.1, z: -2.5}
     rotation: {x: 0, y: -90, z: 0}
     scale: {x: 0.012, y: 0.012, z: 0.012}
-    colorModel: {r: 0.3301887, g: 0.31305626, b: 0.31305626, a: 1}
+    colorModel: {r: 0.3301887, g: 0.2787914, b: 0.2787914, a: 1}
   - name: Bath
     position: {x: 1, y: 0, z: 5.4}
     rotation: {x: 0, y: 180, z: 0}
@@ -349,7 +344,7 @@ MonoBehaviour:
     position: {x: -8, y: 0, z: 6.8}
     rotation: {x: 0, y: 90, z: 0}
     scale: {x: 1.3, y: 1.3, z: 1.3}
-    colorModel: {r: 0.9056604, g: 0.8611606, b: 0.79886085, a: 1}
+    colorModel: {r: 0.8679245, g: 0.80954736, b: 0.72463506, a: 1}
   - name: KitchenCabinet1
     position: {x: -9.3, y: 0, z: 6.9}
     rotation: {x: 0, y: 90, z: 0}
@@ -390,6 +385,101 @@ MonoBehaviour:
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 0.02, y: 0.02, z: 0.02}
     colorModel: {r: 0.6320754, g: 0.62589025, b: 0.13416697, a: 1}
+  - name: cama
+    position: {x: 1, y: 0, z: -6.2}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.6981132, g: 0.5469352, b: 0.36552152, a: 1}
+  - name: almohada
+    position: {x: -0.05, y: 0.7, z: -6.3}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.39409044, g: 0.6792453, b: 0.6218634, a: 1}
+  - name: frazada
+    position: {x: 1.05, y: 0.3, z: -6.2}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 1.3, y: 1.3, z: 1.3}
+    colorModel: {r: 0.6226415, g: 0.34066954, b: 0.3260057, a: 1}
+  - name: cat
+    position: {x: -8, y: 0.67, z: -6.1}
+    rotation: {x: 0, y: 80, z: 0}
+    scale: {x: 0.025, y: 0.025, z: 0.025}
+    colorModel: {r: 0.8962264, g: 0.6425705, b: 0.29169634, a: 1}
+  - name: escritorio
+    position: {x: 5, y: 0, z: -0.3}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.15, y: 0.15, z: 0.15}
+    colorModel: {r: 0.8962264, g: 0.6425705, b: 0.29169634, a: 1}
+  - name: monitor
+    position: {x: 4.7, y: 1.4, z: -0.3}
+    rotation: {x: 0, y: 190, z: 0}
+    scale: {x: 0.7, y: 0.7, z: 0.7}
+    colorModel: {r: 0.7264151, g: 0.68369824, b: 0.5516643, a: 1}
+  - name: baseMonitor
+    position: {x: 4.7, y: 1.2, z: -0.3}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 0.7, y: 0.7, z: 0.7}
+    colorModel: {r: 0.6415094, g: 0.58548135, b: 0.40245637, a: 1}
+  - name: mouse
+    position: {x: 5.5, y: 1.2, z: -0.3}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 0.7, y: 0.7, z: 0.7}
+    colorModel: {r: 0.6415094, g: 0.58548135, b: 0.40245637, a: 1}
+  - name: teclado
+    position: {x: 5.45, y: 1, z: -0.45}
+    rotation: {x: 0, y: 180, z: 0}
+    scale: {x: 0.7, y: 0.7, z: 0.7}
+    colorModel: {r: 0.6415094, g: 0.58548135, b: 0.40245637, a: 1}
+  - name: gabinete
+    position: {x: 5.55, y: 0, z: -0.45}
+    rotation: {x: 0, y: 5, z: 0}
+    scale: {x: 0.7, y: 0.7, z: 0.7}
+    colorModel: {r: 0.6415094, g: 0.58548135, b: 0.40245637, a: 1}
+  - name: silla1
+    position: {x: 5, y: 0, z: -2}
+    rotation: {x: 0, y: -90, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.6226415, g: 0.4908498, b: 0.32013172, a: 1}
+  - name: almohadon
+    position: {x: 5, y: 0.6, z: -2}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.45056072, g: 0.7075472, b: 0.47947454, a: 1}
+  - name: perchero
+    position: {x: 9, y: 0, z: -0.5}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    colorModel: {r: 0.3069153, g: 0.31132078, b: 0.3077964, a: 1}
+  - name: sombrero
+    position: {x: 9.1, y: 1.5, z: -0.65}
+    rotation: {x: 45, y: 45, z: 0}
+    scale: {x: 0.03, y: 0.03, z: 0.03}
+    colorModel: {r: 0.8113208, g: 0.53788596, b: 0.14159843, a: 1}
+  - name: alfombra
+    position: {x: 2.25, y: 0, z: 5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.35, y: 0.35, z: 0.35}
+    colorModel: {r: 0.5754717, g: 0.4533197, b: 0.4881386, a: 1}
+  - name: portaToallas
+    position: {x: 4.85, y: 1.8, z: 5.5}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.1, y: 0.1, z: 0.1}
+    colorModel: {r: 0.4245283, g: 0.41852084, b: 0.41985583, a: 1}
+  - name: toalla
+    position: {x: 4.75, y: 1, z: 5.45}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.1, y: 0.1, z: 0.1}
+    colorModel: {r: 0.68552727, g: 0.8301887, b: 0.27020293, a: 1}
+  - name: papelHigienico
+    position: {x: 2.5, y: 0.5, z: 7.39}
+    rotation: {x: 0, y: 90, z: 0}
+    scale: {x: 0.2, y: 0.2, z: 0.2}
+    colorModel: {r: 0.6205039, g: 0.6320754, b: 0.5873531, a: 1}
+  - name: jabon
+    position: {x: 1.33, y: 1.1, z: 7.2}
+    rotation: {x: 0, y: 30, z: 0}
+    scale: {x: 0.2, y: 0.2, z: 0.2}
+    colorModel: {r: 0.8301887, g: 0.4574906, b: 0.2232111, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
